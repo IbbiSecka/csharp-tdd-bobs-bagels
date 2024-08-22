@@ -19,8 +19,28 @@ namespace tdd_bobs_bagels.CSharp.Main
 
         public bool Delete(string v)
         {
-            _basket.Remove(v);
+            if (_basket.Contains(v)) {
+                _basket.Remove(v);
+                return true;
+            }
+           
+            return false;
+        }
+        public bool maxCapacity(List<string> _basket)
+        {
+            int maxCapacity = 1;
+            if(_basket.Count > maxCapacity)
+            {
+                return false;
+            }
             return true;
+        }
+        public int totalItems { get { return _basket.Count; } }
+        public int MaxCapacity { get; set; } = 3;
+        public int changeCapacity(int MaxCapacity) {
+
+            return MaxCapacity = 1;
+
         }
     }
 }
